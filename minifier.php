@@ -9,8 +9,7 @@
 
     $l_sInputCss = filter_input(INPUT_GET, 'css', FILTER_SANITIZE_STRING);
     if(!empty($l_sInputCss)) {
-        $l_sMyCss = $l_sMyCss.'css';
-        $l_sContent = file_get_contents_utf8( $l_sMyCss );
+        $l_sContent = file_get_contents_utf8( $l_sInputCss );
         echo minify( $l_sContent );
     } else {
         die( 'Fail...' );
