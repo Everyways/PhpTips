@@ -1,5 +1,6 @@
 <?php
     /**
+     * Minifier permet de minifier simplement les fichiers css
      * Created by Everyways.
      * Date: 6/16/16
      */
@@ -15,6 +16,7 @@
         die( 'Fail...' );
     }
 
+    // compression simple du fichier
     function minify( $in_sContentCss ) {
         if(isset($in_sContentCss) && !empty($in_sContentCss)) {
 
@@ -35,6 +37,11 @@
         }
     }
 
+    /**
+     * Recupere fichier et check encodage -> utf8
+     * @param string $in_sFileName
+     * @return null|string
+     */
     function file_get_contents_utf8($in_sFileName) {
         if(isset($in_sFileName) && !empty($in_sFileName)) {
 
